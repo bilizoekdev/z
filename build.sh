@@ -14,4 +14,4 @@ export BUILD_HOSTNAME=Cirrus
 # export USE_MICROG=true
 # export TARGET_USES_MINI_GAPPS=true
 mka bacon-j8
-# build bootleggers
+# build bootleggers 1
