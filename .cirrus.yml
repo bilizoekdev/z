@@ -1,15 +1,15 @@
 env:
-  RCLONECONFIG_DRIVE: "ENCRYPTED[289286506963a9fa1a4888d88bc9783da30036459f7f1f6371fe701453a62cb1960bc16c474c586b353f860f0eebe7dd]"
-  TG_TOKEN: "ENCRYPTED[e7d2af4cf85c1b2e7ff0f6f8383c431d0bb082cbda1567af22d6aefd15da423f3701c07c3397587afa6e1d8a5ea7dacc]"
-  TG_CHAT_ID: "ENCRYPTED[c566912b82747be3bc6ce3bacf61f98b9edcb80cf51ec4daf41e24b43afa70baf877e012dfeabccd299e06acb45ed7e4]"
+  RCLONECONFIG_DRIVE: "ENCRYPTED[4d4fef7b65a0a37af3428a47d09f0267fa0f8bdad07536783758413cce84d5c7e0e960e5c34f55fa33d3666d3293d1d6]"
+  TG_TOKEN: "ENCRYPTED[bacd25c423306c72c927db12250f45770c12560e24182cc66a5787e4326f036e471070d446417a1662d474bdc08616ac]"
+  TG_CHAT_ID: "ENCRYPTED[15fe1ce26d43b73d1877f0717369c9efeae4af72e4475fb53af29083c3ed4ef8bc403bf58b3b5b7665b63071784d314c]"
   WORKDIR: "/tmp"
-  EMAIL: "ENCRYPTED[869864d36bb6859156d490d08cc3b197b6a49afc0caf3da9c9f9bef456fe86be333a45d81263767c4388d430d0d1a9cd]"
+  EMAIL: "ENCRYPTED[ddf6df46e3839e07c734d428c720e0f3928211e92ce8721512bc8884e89932493ea7bda8bb6a8959fde8319ea347ccad]"
   CIRRUS_CLONE_DEPTH: "1"
-  credentials: "ENCRYPTED[b5cc9cfc03ba04507e78432058852817b69754101c47ae5c3ac63e0c89dd889595013f997d49ac4081623952ac47fdff]"
+  credentials: "ENCRYPTED[0255b76bd9edcec0ea8636b9366a456e96b6367da4a1185640979cb07a3a17c75c3e9429137880f814f3d0617b0fa92a]"
 
 task:
   name: "Setting Up, Syncing, Building and Uploading"
-  only_if: $CIRRUS_REPO_OWNER == 'yanzszs'
+  only_if: $CIRRUS_REPO_OWNER == 'bilizoekdev'
   timeout_in: 120m
   container:
     image: anggit86/ubuntu:22.04
@@ -20,8 +20,8 @@ task:
      - ./script/load_ccache.sh
 
   Sync-rom_script:
-     - git config --global user.name "yanzszs"
-     - git config --global user.email "yanzszs46@gmail.com"
+     - git config --global user.name "bilizoekdev"
+     - git config --global user.email "bilizoekdev@gmail.com"
      - echo "$credentials" > ~/.git-credentials
      - git config --global credential.helper store --file=~/.git-credentials
      - ./script/sync.sh
